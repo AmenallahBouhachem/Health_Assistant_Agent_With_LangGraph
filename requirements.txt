@@ -1,2 +1,0 @@
-langgraph==0.3.22
-langgraph-checkpoint-sqlite==2.0.5

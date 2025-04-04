@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: ./  # Use the root folder as the context for frontend
+      dockerfile: src/Dockerfile  # Dockerfile is in the src directory
+    ports:
+      - "3000:3000"  # Expose the React app on port 3000
+    depends_on:
+      - backend  # Ensure the backend starts first
+
+  backend:
+    build:
+      context: ./server  # Backend code is in the server folder
+      dockerfile: Dockerfile  # Dockerfile is in the server folder
+    ports:
+      - "4000:4000"  # Expose the backend API on port 5000
+    environment:
+      - NODE_ENV=production  # Example of an environment variable
+      - PORT=4000
+

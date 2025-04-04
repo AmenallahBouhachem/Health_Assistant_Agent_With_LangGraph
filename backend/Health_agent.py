@@ -1,4 +1,4 @@
-from typing import List,TypedDict, Dict
+from typing import List,TypedDict, Dict, Any
 from langchain_groq import ChatGroq 
 from langgraph.graph import StateGraph, START
 from dotenv import load_dotenv
@@ -184,18 +184,23 @@ builder.add_edge("dbQ", "resp")
 
 
     
-def run_agent(question: str, conversation_history: List[str] = []) -> str:
+def run_agent(question: str, conversation_history: List[Dict[str, Any]] = []) -> str:
     with SqliteSaver.from_conn_string(":memory:") as memory:
         graph = builder.compile(checkpointer=memory)
         thread_id = str(uuid.uuid4())
         config = {"configurable": {"thread_id": thread_id}}
+
+        conversation_hist = "\n".join(
+            f"{msg.get('role', 'unknown')}: {msg.get('content', '')}"
+            for msg in conversation_history
+        )
         
         initial_state = {
             "task": question,
             "refined_question": "",
             "context": "",
             "response": "",
-            "conversation_history": "\n".join(conversation_history),
+            "conversation_history": conversation_hist,
             "messages": []
         }
         
@@ -207,7 +212,7 @@ def run_agent(question: str, conversation_history: List[str] = []) -> str:
             return "No response generated"
     
 
-if __name__ == "__main__":
-    task = "List all patients admitted with Cancer in 2024, including their treating doctors and discharge dates."
-    response = run_agent(task,conversation_history=["List all patients admitted with Cancer in 2024, including their treating doctors and discharge dates."])
-    print(response)
+# if __name__ == "__main__":
+#     task = "List all patients admitted with Cancer in 2024, including their treating doctors and discharge dates."
+#     response = run_agent(task,conversation_history=["List all patients admitted with Cancer in 2024, including their treating doctors and discharge dates."])
+#     print(response)

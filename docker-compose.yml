@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfiles/frontend.dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_AGENT_API_URL=http://backend:8001
+
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfiles/backend.dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend:/app

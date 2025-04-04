@@ -1,0 +1,12 @@
+langgraph==0.3.22
+langgraph-checkpoint-sqlite==2.0.5
+
+langchain==0.3.22
+langchain-core==0.3.49
+langchain-community==0.3.20
+langchain-groq==0.3.1
+requests
+fastapi 
+uvicorn
+pydantic
+python-multipart

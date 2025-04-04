@@ -1,0 +1,48 @@
+[
+  {
+    "prompt": "hellooo",
+    "reply": "You always have great ideas, Gouga!",
+    "timestamp": "2025-01-28T06:07:12.448Z"
+  },
+  {
+    "prompt": "how are you",
+    "reply": "Here's something to consider!",
+    "timestamp": "2025-01-28T06:07:21.516Z"
+  },
+  {
+    "_id": "cc027126-13c9-4e13-810e-df898765e1dc",
+    "prompt": "hello",
+    "reply": "That's an interesting question!",
+    "timestamp": "2025-01-28T06:17:29.968Z"
+  },
+  {
+    "_id": "628a3b48-dd3c-4f06-bf17-0469060bad12",
+    "prompt": "still here ?",
+    "reply": "That's an interesting question!",
+    "timestamp": "2025-01-28T06:17:37.475Z"
+  },
+  {
+    "_id": "8723210f-ab85-4f0a-ae80-166ce38ca519",
+    "prompt": "hello ",
+    "reply": "Here's something to consider!",
+    "timestamp": "2025-01-28T06:25:32.970Z"
+  },
+  {
+    "_id": "2a8730c7-71b8-4705-aacc-2962bde468ec",
+    "prompt": "how are you ",
+    "reply": "You always have great ideas, Gouga!",
+    "timestamp": "2025-01-28T06:25:36.777Z"
+  },
+  {
+    "_id": "d545dfaa-31eb-4f71-9389-5c39ba58838f",
+    "prompt": "hello",
+    "reply": "That's an interesting question!",
+    "timestamp": "2025-01-28T06:27:14.012Z"
+  },
+  {
+    "_id": "23072414-0f2f-4b12-aa0a-d3fee36eb559",
+    "prompt": "okay",
+    "reply": "Here's something to consider!",
+    "timestamp": "2025-01-28T06:27:20.174Z"
+  }
+]
